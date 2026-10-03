@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "douyin-welcome-mac"
+version = "0.1.0"
+description = "Local-first Douyin welcome assistant for Apple Silicon"
+requires-python = ">=3.12"
+dependencies = ["playwright>=1.55,<2", "mlx-audio==0.5.7", "soundfile>=0.13"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=1"]
+
+[tool.setuptools.packages.find]
+where = ["backend"]
+
+[tool.pytest.ini_options]
+pythonpath = ["backend"]
+asyncio_mode = "auto"
+
